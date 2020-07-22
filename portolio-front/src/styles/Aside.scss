@@ -3,4 +3,24 @@
 .asideMenu {
   grid-area: asideMenu;
   background-color: $navColor;
+  color: $fontColor;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+  img.avatar {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .asideMenu {
+    img {
+      width: 35px;
+    }
+  }
+
+  .asideMenu img.avatar {
+    width: 55px;
+  }
 }
