@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+.main {
+  grid-area: main;
+  font-family: Roboto sans-serif;
+  color: $fontColor;
+  display: grid;
+  font-size: 30px;
+  height: 100vh;
+  margin: 0;
+  place-content: center;
+}

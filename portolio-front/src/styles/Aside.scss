@@ -1,0 +1,6 @@
+@import "./variables.scss";
+
+.asideMenu {
+  grid-area: asideMenu;
+  background-color: $navColor;
+}
