@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { backend } from "../conf";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -15,7 +16,7 @@ const FormContact = () => {
   };
 
   const error = () => toast.error("oups il y a une erreur");
-  const notify = () => toast.default("Votre contact est enregistré !");
+  const notify = () => toast.info("Votre contact est enregistré !");
 
   const handleSubmit = (e) => {
     e.preventDefault();
