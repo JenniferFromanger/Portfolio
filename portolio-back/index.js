@@ -1,0 +1,19 @@
+require("dotenv").config();
+const express = require("express");
+const app = express();
+
+const contacts = require("./routes/contacts.js");
+const cors = require("cors");
+
+app.use(express.json());
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+
+app.use("/contacts", contacts);
+app.listen(process.env.PORT, (err) => {
+  if (err) {
+    console.log("Erreur server");
+  } else {
+    console.log(`Server is listening on ${process.env.PORT}`);
+  }
+});
