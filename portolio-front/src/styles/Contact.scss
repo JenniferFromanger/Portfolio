@@ -3,6 +3,7 @@
 .contact {
   font-family: Roboto sans-serif;
   color: $fontInside;
+  height: 100vh;
   h2 {
     font-size: 35px;
     text-align: center;
@@ -29,6 +30,23 @@
     margin: auto;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 80%;
+    height: 15vh;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .contact {
+    h2 {
+      font-size: 25px;
+    }
+    p {
+      font-size: 15px;
+      padding-bottom: 15px;
+    }
+    .logos {
+      height: 8vh;
+    }
   }
 }

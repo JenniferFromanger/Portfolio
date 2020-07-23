@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { backend } from "../conf";
 import { ToastContainer, toast } from "react-toastify";
+import { TextField, Button } from "@material-ui/core";
 import "react-toastify/dist/ReactToastify.css";
+import "../styles/FormContact.scss";
 
 const FormContact = () => {
-  const [contact, setContact] = useState({});
+  const initialValues = { name: "", email: "", subject: "", content: "" };
+  const [contact, setContact] = useState(initialValues);
 
   const handleChange = (e) => {
     const tmp = {
@@ -15,13 +18,15 @@ const FormContact = () => {
     setContact(tmp);
   };
 
-  const error = () => toast.error("oups il y a une erreur");
-  const notify = () => toast.info("Votre contact est enregistré !");
+  const error = () => toast.error("sorry that didn't work");
+  const notify = () => toast.info("Your message is saved !");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post(`${backend}/contacts`, contact).then(notify).catch(error);
+    setContact(initialValues);
   };
+  const { name, email, subject, content } = contact;
   return (
     <div className="form">
       <ToastContainer
@@ -41,43 +46,55 @@ const FormContact = () => {
           handleSubmit(e);
         }}
       >
-        <input
+        <TextField
           type="text"
           name="name"
+          value={name}
           required
           onChange={(e) => {
             handleChange(e);
           }}
           placeholder="Name"
         />
-        <input
+        <TextField
           type="email"
           name="email"
+          value={email}
           required
           onChange={(e) => {
             handleChange(e);
           }}
           placeholder="Email"
         />
-        <input
+        <TextField
           type="text"
           name="subject"
+          value={subject}
           required
           onChange={(e) => {
             handleChange(e);
           }}
           placeholder="Subject"
         />
-        <input
-          className="message"
+        <TextField
+          multiline
+          rows={5}
           type="text"
           name="content"
+          value={content}
           onChange={(e) => {
             handleChange(e);
           }}
           placeholder="Your Message"
         />
-        <button type="submit" value="poster" />
+        <Button
+          variant="contained"
+          color="primary"
+          type="submit"
+          value="poster"
+        >
+          Send
+        </Button>
       </form>
     </div>
   );

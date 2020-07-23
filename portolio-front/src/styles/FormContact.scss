@@ -1,0 +1,30 @@
+@import "./variables.scss";
+
+.form,
+form {
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  margin: auto;
+  input {
+    color: $navColor;
+  }
+}
+
+form {
+  height: 80%;
+  background-color: $fontColor;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 640px) {
+  form {
+    height: 80%;
+  }
+  .form,
+  form {
+    width: 90%;
+  }
+}
