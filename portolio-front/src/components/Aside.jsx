@@ -7,14 +7,16 @@ export default function Aside() {
     <div className="asideMenu">
       <img className="avatar" src="/avatar.png" alt="mon avatar" />
       <NavLink exact to="/">
-        <img src="/house.png" alt="accueil" />
+        <img className="picto" src="/house.png" alt="accueil" />
       </NavLink>
       <NavLink to="/contact">
-        <img src="/contact.png" alt="contactez-moi" />
+        <img className="picto" src="/contact.png" alt="contactez-moi" />
       </NavLink>
-      <img src="/project.png" alt="my work" />
-      <img src="/skill.png" alt="my skills" />
-      <img src="/log-in.png" alt="my skills" />
+      <NavLink to="/projects">
+        <img className="picto" src="/project.png" alt="my work" />
+      </NavLink>
+      <img className="picto" src="/skill.png" alt="my skills" />
+      <img className="picto" src="/log-in.png" alt="my skills" />
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import "../styles/Contact.scss";
 import FormContact from "../components/FormContact";
+import "animate.css/animate.min.css";
 
 export default function Contact() {
   return (
     <div className="contact">
-      <h2>About Me</h2>
+      <h2 className="animate__animated animate__fadeInLeft">About Me</h2>
       <p>
         I have always been passionated about the web, its place in our society
         and its evolution. I have chosen to become an actor of this evolution.
@@ -17,7 +18,7 @@ export default function Contact() {
         link to my github and linkedIn. Also, my hard skills are mentioned in
         the portfolio.
       </p>
-      <h2>Contact Me</h2>
+      <h2 className="animate__animated animate__fadeInLeft">Contact Me</h2>
       <p>
         If you wish to contact me, do not hesitate to fill out this form, I will
         get back to you very quickly ...

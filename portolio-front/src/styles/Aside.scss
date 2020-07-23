@@ -8,11 +8,11 @@
   flex-flow: column wrap;
   justify-content: space-around;
   align-items: center;
+  img.picto:hover {
+    opacity: 0.4;
+  }
   img.avatar {
     width: 200px;
-  }
-  img:hover {
-    opacity: 0.4;
   }
 }
 
