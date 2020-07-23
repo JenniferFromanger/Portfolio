@@ -20,7 +20,7 @@ export default function Projects() {
       <div className="projects">
         {projects.map((project) => {
           return (
-            <NavLink to={`/projects/${project.id}`} key={project.id}>
+            <NavLink to={`/project/${project.id}`} key={project.id}>
               <div className="card">
                 <img src={project.picture1} alt={project.title} />
                 <h2 className="animate__animated animate__rubberBand">

@@ -15,7 +15,7 @@ function App() {
         <Route exact path="/" component={Main} />
         <Route path="/contact" component={Contact} />
         <Route path="/projects" component={Projects} />
-        <Route path="/projects/:id" component={OneProject} />
+        <Route path="/project/:id" component={OneProject} />
       </Switch>
     </div>
   );
