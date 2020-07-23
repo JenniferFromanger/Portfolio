@@ -35,3 +35,32 @@
     }
   }
 }
+
+@media screen and (max-width: 640px) {
+  .oneProject {
+    h2 {
+      font-size: 20px;
+    }
+
+    p,
+    a {
+      font-size: 15px;
+      margin: 2vh 0px;
+    }
+
+    .image {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      margin: 2vh 0px;
+      padding: 0px 3vh;
+
+      img {
+        width: 289px;
+        height: 140px;
+        margin: 2vh 0px;
+        padding: 0px 3vh;
+      }
+    }
+  }
+}
