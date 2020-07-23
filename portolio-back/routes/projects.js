@@ -1,9 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-const groupController = require("../controllers/projects");
+const projectController = require("../controllers/projects");
 
 // Get All projects
-router.get("/", groupController.getAllProjects);
+router.get("/", projectController.getAllProjects);
+
+// Get one project
+router.get("/:id", projectController.getOneProject);
 
 module.exports = router;
