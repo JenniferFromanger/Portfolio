@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import Aside from "./components/Aside";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
+import OneProject from "./pages/OneProject";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/" component={Main} />
         <Route path="/contact" component={Contact} />
         <Route path="/projects" component={Projects} />
+        <Route path="/projects/:id" component={OneProject} />
       </Switch>
     </div>
   );

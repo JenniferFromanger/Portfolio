@@ -3,6 +3,15 @@
   margin: auto;
   color: $fontInside;
   text-align: center;
+  a {
+    text-decoration: none;
+    color: $fontInside;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
+  }
   .projects {
     display: grid;
     grid-template-columns: 1fr auto;
