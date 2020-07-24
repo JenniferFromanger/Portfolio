@@ -8,6 +8,7 @@ export default function Aside() {
     textContact: false,
     textProject: false,
     textSkill: false,
+    textPrivate: false,
   };
 
   function reducer(state = { ...initialState }, action) {
@@ -28,6 +29,10 @@ export default function Aside() {
         return { textSkill: (state.textSkill = true) };
       case "setImageSkill":
         return { textProject: (state.textSkill = false) };
+      case "setTextPrivate":
+        return { textPrivate: (state.textPrivate = true) };
+      case "setImagePrivate":
+        return { textPrivate: (state.textPrivate = false) };
       default:
         throw new Error();
     }
@@ -83,8 +88,16 @@ export default function Aside() {
           <p>My skills</p>
         )}
       </NavLink>
-      <NavLink to="/Private">
-        <img className="picto" src="/log-in.png" alt="private " />
+      <NavLink
+        to="/Private"
+        onMouseEnter={() => dispatch({ type: "setTextPrivate" })}
+        onMouseLeave={() => dispatch({ type: "setImagePrivate" })}
+      >
+        {!state.textPrivate ? (
+          <img className="picto" src="/log-in.png" alt="private " />
+        ) : (
+          <p>Private</p>
+        )}
       </NavLink>
     </div>
   );
