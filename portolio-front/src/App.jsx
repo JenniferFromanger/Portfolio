@@ -6,6 +6,7 @@ import Aside from "./components/Aside";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import OneProject from "./pages/OneProject";
+import Skills from "./pages/Skills";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/contact" component={Contact} />
         <Route path="/projects" component={Projects} />
         <Route path="/project/:id" component={OneProject} />
+        <Route path="/skills" component={Skills} />
       </Switch>
     </div>
   );
