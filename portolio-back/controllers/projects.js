@@ -20,7 +20,7 @@ const getOneProject = async (req, res) => {
     const [
       data,
     ] = await connection.query(
-      "SELECT id, title, github_link as githubLink, netlify_link as netlifyLink, picture_1 as picture1, picture_2 as picture2, description, date FROM project WHERE id = ?",
+      'SELECT id, title, github_link as githubLink, netlify_link as netlifyLink, picture_1 as picture1, picture_2 as picture2, description, DATE_FORMAT(date, "%M %Y") as date FROM project WHERE id = ?',
       [id]
     );
 
