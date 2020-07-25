@@ -2,7 +2,7 @@
 
 .form,
 form {
-  height: 35vh;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,9 +20,6 @@ form {
 }
 
 @media screen and (max-width: 640px) {
-  form {
-    height: 80%;
-  }
   .form,
   form {
     width: 90%;
