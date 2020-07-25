@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import axios from "axios";
 import { backend } from "../conf";
 import { ToastContainer, toast } from "react-toastify";
-import { TextField, Button } from "@material-ui/core";
+import { TextField, Button, Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import SendIcon from "@material-ui/icons/Send";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/FormContact.scss";
 
+const useStyles = makeStyles((theme) => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+}));
+
 const FormContact = () => {
+  const classes = useStyles();
   const initialValues = { name: "", email: "", subject: "", content: "" };
   const [contact, setContact] = useState(initialValues);
 
@@ -41,61 +50,72 @@ const FormContact = () => {
         pauseOnHover
         style={{ fontSize: "20px", textAlign: "center" }}
       />
-      <form
-        onSubmit={(e) => {
-          handleSubmit(e);
-        }}
-      >
-        <TextField
-          type="text"
-          name="name"
-          value={name}
-          required
-          onChange={(e) => {
-            handleChange(e);
+      <Grid container justify="center" alignItems="center">
+        <form
+          onSubmit={(e) => {
+            handleSubmit(e);
           }}
-          placeholder="Name"
-        />
-        <TextField
-          type="email"
-          name="email"
-          value={email}
-          required
-          onChange={(e) => {
-            handleChange(e);
-          }}
-          placeholder="Email"
-        />
-        <TextField
-          type="text"
-          name="subject"
-          value={subject}
-          required
-          onChange={(e) => {
-            handleChange(e);
-          }}
-          placeholder="Subject"
-        />
-        <TextField
-          multiline
-          rows={5}
-          type="text"
-          name="content"
-          value={content}
-          onChange={(e) => {
-            handleChange(e);
-          }}
-          placeholder="Your Message"
-        />
-        <Button
-          variant="contained"
-          color="primary"
-          type="submit"
-          value="poster"
         >
-          Send
-        </Button>
-      </form>
+          <TextField
+            type="text"
+            name="name"
+            value={name}
+            required
+            label="Name"
+            variant="filled"
+            color="secondary"
+            onChange={(e) => {
+              handleChange(e);
+            }}
+          />
+          <TextField
+            type="email"
+            name="email"
+            value={email}
+            required
+            label="Email"
+            variant="filled"
+            color="secondary"
+            onChange={(e) => {
+              handleChange(e);
+            }}
+          />
+          <TextField
+            type="text"
+            name="subject"
+            value={subject}
+            required
+            label="Subject"
+            variant="filled"
+            color="secondary"
+            onChange={(e) => {
+              handleChange(e);
+            }}
+          />
+          <TextField
+            multiline
+            rows={5}
+            type="text"
+            name="content"
+            value={content}
+            label="Your Message"
+            variant="filled"
+            color="secondary"
+            onChange={(e) => {
+              handleChange(e);
+            }}
+          />
+          <Button
+            variant="contained"
+            type="submit"
+            color="primary"
+            className={classes.button}
+            endIcon={<SendIcon>send</SendIcon>}
+          >
+            Send
+          </Button>
+        </form>
+      </Grid>
     </div>
   );
 };

@@ -19,6 +19,9 @@
     text-decoration: none;
     color: $fontInside;
   }
+  .private {
+    color: red;
+  }
 }
 
 @media screen and (max-width: 640px) {

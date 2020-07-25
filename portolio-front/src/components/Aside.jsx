@@ -78,7 +78,7 @@ export default function Aside() {
         )}
       </NavLink>
       <NavLink
-        to="/Skills"
+        to="/skills"
         onMouseEnter={() => dispatch({ type: "setTextSkill" })}
         onMouseLeave={() => dispatch({ type: "setImageSkill" })}
       >
@@ -89,14 +89,14 @@ export default function Aside() {
         )}
       </NavLink>
       <NavLink
-        to="/Private"
+        to="/private"
         onMouseEnter={() => dispatch({ type: "setTextPrivate" })}
         onMouseLeave={() => dispatch({ type: "setImagePrivate" })}
       >
         {!state.textPrivate ? (
           <img className="picto" src="/log-in.png" alt="private " />
         ) : (
-          <p>Private</p>
+          <p className="private">Private</p>
         )}
       </NavLink>
     </div>
