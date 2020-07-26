@@ -31,4 +31,50 @@ const getOneProject = async (req, res) => {
   }
 };
 
-module.exports = { getAllProjects, getOneProject };
+const CreateOneProject = async (req, res) => {
+  try {
+    const project = await connection.query("INSERT INTO project SET ?", [
+      req.body,
+    ]);
+
+    return res.status(200).send(project);
+  } catch (e) {
+    console.log(e);
+    return res.status(500).send("Error while creating the project.");
+  }
+};
+
+const ChangeOneProject = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const project = await connection.query("UPDATE project SET ? WHERE id=?", [
+      req.body,
+      id,
+    ]);
+    return res.send(project);
+  } catch (e) {
+    console.log(e);
+    return res.status(500).send("Error while changing the project.");
+  }
+};
+
+const DeleteOneProject = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const project = await connection.query("DELETE FROM project WHERE id=?", [
+      id,
+    ]);
+    return res.send(project);
+  } catch (e) {
+    console.log(e);
+    return res.status(500).send("Error while deleting the project.");
+  }
+};
+
+module.exports = {
+  getAllProjects,
+  getOneProject,
+  CreateOneProject,
+  ChangeOneProject,
+  DeleteOneProject,
+};
