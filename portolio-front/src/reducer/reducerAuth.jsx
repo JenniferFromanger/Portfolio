@@ -4,7 +4,7 @@ const initial = {
   userData: {},
 };
 
-const reducerAuth = (state = { ...initial }, action) => {
+const reducerAuth = (state = initial, action) => {
   switch (action.type) {
     case "LOGIN":
       return {
