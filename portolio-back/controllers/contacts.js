@@ -22,7 +22,7 @@ const createOneContact = async (req, res) => {
 const getContacts = async (req, res) => {
   try {
     const contacts = await connection.query(
-      'SELECT id, name, subject, DATE_FORMAT(date, "%D %b %Y") content FROM contact ORDER BY date DESC'
+      'SELECT id, name, email, subject, content, DATE_FORMAT(date, "%D %b %Y") AS date FROM contact ORDER BY date DESC'
     );
 
     return res.status(200).send(contacts[0]);
