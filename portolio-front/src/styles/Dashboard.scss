@@ -1,1 +1,13 @@
 @import "./variables.scss";
+
+.dash {
+  h3 {
+    text-align: center;
+  }
+  p {
+    border-bottom: 1px solid $fontInside;
+  }
+  span {
+    color: $fontColor;
+  }
+}
